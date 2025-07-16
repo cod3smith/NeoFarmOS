@@ -1,0 +1,39 @@
+neobiolab:
+  db_url: "postgres://neobiolab:password@postgres:5432/neobiolab"
+  secret_key: "neobiolab-secret"
+  api_key: "neobiolab-api-key"
+
+neocortex:
+  db_url: "postgres://neocortex:password@postgres:5432/neocortex"
+  secret_key: "neocortex-secret"
+  api_key: "neocortex-api-key"
+  nats_url: "nats://nats:4222"
+  mqtt_url: "mqtt://mqtt:1883"
+  redis_url: "redis://redis:6379"
+  chroma_url: "http://chroma:8000"
+  postgres_url: "postgres://neocortex:password@postgres:5432/neocortex"
+
+neoedge:
+  db_url: "postgres://neoedge:password@postgres:5432/neoedge"
+  secret_key: "neoedge-secret"
+  mqtt_password: "edge-mqtt-pass"
+
+neofungi:
+  db_url: "postgres://neofungi:password@postgres:5432/neofungi"
+  secret_key: "neofungi-secret"
+  api_key: "neofungi-api-key"
+
+neohive:
+  db_url: "postgres://neohive:password@postgres:5432/neohive"
+  secret_key: "neohive-secret"
+  api_key: "neohive-api-key"
+
+neoplant:
+  db_url: "postgres://neoplant:password@postgres:5432/neoplant"
+  secret_key: "neoplant-secret"
+  api_key: "neoplant-api-key"
+
+neosilk:
+  db_url: "postgres://neosilk:password@postgres:5432/neosilk"
+  secret_key: "neosilk-secret"
+  api_key: "neosilk-api-key"

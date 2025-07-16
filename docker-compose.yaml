@@ -1,0 +1,106 @@
+services:
+  neoplant:
+    build: 
+      context: .
+      dockerfile: apps/neoplant/Dockerfile
+    ports:
+      - "8001:8000"
+    networks:
+      - neofarm-net
+
+  neofungi:
+    build: 
+      context: .
+      dockerfile: apps/neofungi/Dockerfile
+    ports:
+      - "8002:8000"
+    networks:
+      - neofarm-net
+
+  neohive:
+    build: 
+      context: .
+      dockerfile: apps/neohive/Dockerfile
+    ports:
+      - "8003:8000"
+    networks:
+      - neofarm-net
+
+  neoedge:
+    build: 
+      context: .
+      dockerfile: apps/neoedge/Dockerfile
+    ports:
+      - "8004:8000"
+    networks:
+      - neofarm-net
+
+  neocortex:
+    build:
+      context: .
+      dockerfile: apps/neocortex/Dockerfile
+    ports:
+      - "8005:8000"
+    networks:
+      - neofarm-net
+
+  neosilk:
+    build: 
+      context: .
+      dockerfile: apps/neosilk/Dockerfile
+    ports:
+      - "8006:8000"
+    networks:
+      - neofarm-net
+
+  neobiolab:
+    build: 
+      context: .
+      dockerfile: apps/neobiolab/Dockerfile
+    ports:
+      - "8007:8000"
+    networks:
+      - neofarm-net
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - neofarm-net
+
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mqtt/config:/mosquitto/config
+    networks:
+      - neofarm-net
+
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+    networks:
+      - neofarm-net
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3010:3000"
+    networks:
+      - neofarm-net
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - neofarm-net
+
+networks:
+  neofarm-net:
+    driver: bridge
